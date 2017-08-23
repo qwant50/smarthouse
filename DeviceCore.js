@@ -1,16 +1,17 @@
 'use strict';
 
-function DeviceCore() {
+function DeviceCore(name) {
     this.availableStates = ['on', 'off', 'idle'];
     this._state = this.availableStates[1];
     this.id = Helper.uuidv4();
+    this.name = name || 'Unnamed device';
 }
 
 DeviceCore.prototype = {
     constructor: DeviceCore,
 
     toString: function () {
-        return this.id;
+        return 'Name: ' + this.name + ' ID:' + this.id + ', State: ' + this.getState();
     },
 
     validateState: function (state) {

@@ -1,7 +1,7 @@
 'use strict';
 
-function WiFi(state, DCHPStatus, IP, mask, gateway) {
-    DeviceCore.apply(this, arguments);
+function WiFi(name, state, DCHPStatus, IP, mask, gateway) {
+    DeviceCore.call(this, name);
     this.isDHCPActive = true;
     this.IP = '127.0.0.1';
     this.mask = '255.255.255.0';

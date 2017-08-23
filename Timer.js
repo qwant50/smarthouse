@@ -1,6 +1,6 @@
 'use strict';
 
-function Timer(wifiModule) {
+function Timer(name, wifiModule) {
     DeviceCore.apply(this, arguments);
 }
 

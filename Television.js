@@ -1,6 +1,6 @@
 'use strict';
 
-function Television(wifiModule, options) {
+function Television(name, wifiModule, options) {
     DeviceCore.apply(this, arguments);
     this.options = Object.assign({
         MIN_CHANNEL_NUMBER : 1,
