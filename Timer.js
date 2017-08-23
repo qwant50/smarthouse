@@ -1,23 +1,23 @@
 'use strict';
 
-function Timer(name, wifiModule) {
-    DeviceCore.apply(this, arguments);
+class Timer extends DeviceCore {
+    constructor(name, wifiModule) {
+        super(name);
+    }
+
+    static getCurrentTime() {
+        return (new Date).toString();
+    };
+
+    /**
+     *  set timer
+     *
+     * @param delayInMinutes
+     * @param callback
+     * @returns {number} id's timer
+     */
+    static setDelay(delayInMinutes, callback) {
+        return setTimeout(callback, delayInMinutes * 60 * 1000);
+    };
 }
 
-Timer.prototype = Object.create(DeviceCore.prototype);
-Timer.prototype.constructor = Timer;
-
-Timer.prototype.getCurrentTime = function () {
-    return (new Date).toString();
-};
-
-/**
- *  set timer
- *
- * @param delayInMinutes
- * @param callback
- * @returns {number} id's timer
- */
-Timer.prototype.setDelay = function (delayInMinutes, callback) {
-    return setTimeout(callback, delayInMinutes * 60 * 1000);
-};

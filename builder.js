@@ -1,13 +1,20 @@
 'use strict';
 
-var timer = new Timer();
-console.log(timer.getCurrentTime());
-var television = new Television('Kitchen TV', new WiFi('Kitchen WiFi', 'idle', true));
-television.setState('on');
-television.setChannel(31);
+console.log(Timer.getCurrentTime());
+Timer.setDelay(1, () => alert('After 1 minute'));
+let television = new Television('Kitchen TV', new WiFi('Kitchen WiFi', 'idle', true));
+television.state = 'on';
+television.channel = 31;
 
-console.dir(television.getState());
+console.dir(television.state);
 console.dir(television);
-alert(television.getChannel());
+alert(television.channel);
 alert(television.toString());
+
+/*let deviceCore = new DeviceCore('test device');
+console.log(deviceCore);
+console.log(deviceCore.state);
+console.log(deviceCore.state = 'on');
+console.log(deviceCore);
+console.log(Helper.uuidv4);*/
 
