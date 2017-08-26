@@ -1,6 +1,7 @@
 'use strict';
+import DeviceCore from "./DeviceCore";
 
-class WiFi extends DeviceCore {
+export default class WiFi extends DeviceCore {
     constructor(name, state, DCHPStatus, IP, mask, gateway) {
         super(name);
         this.isDHCPActive = true;

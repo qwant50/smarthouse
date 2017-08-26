@@ -1,3 +1,8 @@
+
+import Timer from "./Timer";
+import WiFi from "./WiFi";
+import Television from "./Television";
+
 'use strict';
 
 console.log(Timer.getCurrentTime());

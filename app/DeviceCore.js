@@ -1,6 +1,7 @@
 'use strict';
+import Helper from "./Helper";
 
-class DeviceCore {
+export default class DeviceCore {
     constructor(name) {
         this.availableStates = ['on', 'off', 'idle'];
         this._state = this.availableStates[1];

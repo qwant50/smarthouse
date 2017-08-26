@@ -1,6 +1,7 @@
 'use strict';
+import DeviceCore from "./DeviceCore";
 
-class Timer extends DeviceCore {
+export default class Timer extends DeviceCore {
     constructor(name, wifiModule) {
         super(name);
     }

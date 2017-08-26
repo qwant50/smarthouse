@@ -1,6 +1,7 @@
 'use strict';
+import DeviceCore from "./DeviceCore";
 
-class Television extends DeviceCore {
+export default class Television extends DeviceCore {
     constructor(name, wifiModule, options) {
         super(name);
         this.options = Object.assign({
