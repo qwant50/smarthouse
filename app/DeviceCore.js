@@ -18,6 +18,9 @@ export default class DeviceCore {
     }
 
     set state(state) {
+        if (typeof state === 'undefined') {
+            return false;
+        }
         state = state.toLowerCase();
         if (this.validateState(state)) {
             this._state = state;

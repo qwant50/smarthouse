@@ -1,9 +1,9 @@
 module.exports = {
-   entry : "./app/index.js",
+   entry : "./app/index.jsx",
    output: {
       filename: "./bundle.js"
    },
- /*  module: {
+   module: {
       rules: [ {
          test: /\.(js|jsx)$/,
          loader: "babel-loader",
@@ -12,7 +12,7 @@ module.exports = {
             presets: [ "react", "env" ]
          }
       } ]
-   },*/
+   },
    devServer: {
       open: true,
       historyApiFallback: true
