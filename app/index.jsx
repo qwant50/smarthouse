@@ -15,6 +15,7 @@ let smartHouse = new SmartHouse();
 smartHouse.create('Television', 'Kitchen TV');
 smartHouse.create('Television', 'Dining room TV');
 smartHouse.create('Television');
+smartHouse.create('Lamp', 'Bedside lamp');
 smartHouse.create('WiFi', 'WiFi of my neighborn', 'on');
 let allDevices = smartHouse.getDevicesAll();
 let listOfDevices = '';

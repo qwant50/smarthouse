@@ -1,11 +1,13 @@
 'use strict';
 
 import Television from "./Television";
+import Lamp from "./Lamp";
 import WiFi from "./WiFi";
 
 export default class SmartHouse {
     constructor() {
         this.container = new Map();
+        this.listOfAvaibleDevices = ['Television', 'Lamp', 'WiFi'];
     }
 
     create(typeOfDevice, ...params) {
@@ -14,7 +16,9 @@ export default class SmartHouse {
             case 'Television':
                 device = new Television(params[0], new WiFi(params[0], 'idle', true));
                 break;
-
+            case 'Lamp':
+                device = new Lamp(params[0], new WiFi(params[0], 'idle', true));
+                break;
             case 'WiFi':
                 device = new WiFi(...params);
                 break;
