@@ -3,6 +3,9 @@
 import SmartHouse from "./SmartHouse";
 import React from "react";
 import ReactDOM from "react-dom";
+import {Provider} from "react-redux"
+import {createStore} from "redux";
+import App from "./App";
 
 
 // set delay 1 min
@@ -17,21 +20,6 @@ smartHouse.create('Television', 'Dining room TV');
 smartHouse.create('Television');
 smartHouse.create('Lamp', 'Bedside lamp');
 smartHouse.create('WiFi', 'WiFi of my neighborn', 'on');
-let allDevices = smartHouse.getDevicesAll();
-let listOfDevices = '';
-for(let item of allDevices.keys()){
-    listOfDevices += '' + smartHouse.getDeviceById(item) + '<br>';
-}
+//let allDevices = smartHouse.getDevicesAll();
 
-class ListComponent extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {list : this.props.list };
-    }
-    render() {
-        return <h3> {this.state.list}
-            <button type="button">Delete device</button>
-        </h3>;
-    }
-}
-ReactDOM.render(<ListComponent list = {listOfDevices}/>, document.getElementById("list-of-devices"), () => console.log("Список добавлен"));
+ReactDOM.render(<App smartHouse={smartHouse}/>, document.getElementById("available-devices"), () => console.log("Список добавлен"));
